@@ -1,0 +1,31 @@
+
+
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h2>sign-in</h2>
+        <form class="container" [formGroup]="frmGrpLogin" (submit)="fnSubmit()">
+            <div class="row form-group">
+                <label for="email" class="col-ms-4">Email</label>
+                <input type="text" name="email" id="email" class="col-ms-8" formControlName="email">
+            </div>
+            <div class="row form-group">
+                <label for="password" class="col-ms-4">Password</label>
+                <input type="password" name="password" id="password" class="col-ms-8"  formControlName="password">
+            </div>
+            <br>
+            <div class="row form-group">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-success btn-sm" [disabled]="!frmGrpLogin.valid">Login</button> &nbsp;
+                    <button type="reset" class="btn btn-warning btn-sm">Cancel</button>
+                </div>
+                <div class="col-sm-6">
+                    <button (click)="redirect('signup')"  type="button" class="btn btn-link btn-sm">Signup</button>
+                    <button (click)="redirect('forget-password')" style="float: right;" type="button" class="btn btn-link btn-sm">Forget password</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
